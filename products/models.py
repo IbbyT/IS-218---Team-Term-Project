@@ -5,6 +5,14 @@ from django.core.validators import FileExtensionValidator
 import uuid
 import os
 
+from django.db import models
+
+class Tag(models.Model):
+	name = models.CharField(max_length=30, unique=True)
+
+	def __str__(self):
+		return self.name
+
 def product_upload_path(_, filename):
 	ext = filename.split('.')[-1]
 	new_filename = f"{uuid.uuid4()}.{ext}"
@@ -17,6 +25,11 @@ class Product(models.Model):
 	image = models.FileField(
 		upload_to=product_upload_path,
 		validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
+	)
+	tags = models.ManyToManyField(
+		Tag,
+		related_name='products',
+		blank=True
 	)
 
 	def __str__(self):
