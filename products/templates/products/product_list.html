@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+
+<header class="page-header">
+  <h1 class="page-title">Our Bakery Picks</h1>
+  <p class="page-subtitle">Browse pies, cakes, cookies, and more — and see what people love most.</p>
+</header>
+
+<section class="products-grid">
+
+  <!-- PRODUCT 1 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here (replace src with your product image) -->
+      <!-- Example: <img src="{% static 'products/images/apple_pie.jpg' %}" alt="Classic Apple Pie"> -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+
+    <div class="product-body">
+      <h3 class="product-title">Classic Apple Pie</h3>
+      <p class="product-desc">Cinnamon apples, flaky crust, warm and simple.</p>
+
+      <div class="product-meta">
+        <span class="tag">Pie</span>
+        <span class="tag">Popular</span>
+      </div>
+
+      <a class="product-link" href="{% url 'products:detail' 1 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 2 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Pumpkin Spice Pie</h3>
+      <p class="product-desc">Creamy pumpkin filling with cozy spices.</p>
+      <div class="product-meta">
+        <span class="tag">Pie</span>
+        <span class="tag">Seasonal</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 2 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 3 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Cherry Lattice Pie</h3>
+      <p class="product-desc">Tart cherries under a golden lattice crust.</p>
+      <div class="product-meta">
+        <span class="tag">Pie</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 3 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 4 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Pecan Crunch Pie</h3>
+      <p class="product-desc">Sweet, nutty filling with a caramel finish.</p>
+      <div class="product-meta">
+        <span class="tag">Pie</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 4 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 5 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Chocolate Fudge Cake</h3>
+      <p class="product-desc">Rich cocoa layers with silky frosting.</p>
+      <div class="product-meta">
+        <span class="tag">Cake</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 5 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 6 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Vanilla Bean Cupcakes</h3>
+      <p class="product-desc">Soft vanilla cupcakes with buttercream swirl.</p>
+      <div class="product-meta">
+        <span class="tag">Sweets</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 6 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 7 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Oatmeal Raisin Cookies</h3>
+      <p class="product-desc">Chewy oats with sweet raisins and spice.</p>
+      <div class="product-meta">
+        <span class="tag">Cookies</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 7 %}">View Details</a>
+    </div>
+  </article>
+
+  <!-- PRODUCT 8 -->
+  <article class="product-card">
+    <div class="product-image">
+      <!-- TODO: Add image here -->
+      <div class="image-placeholder">Add Image</div>
+    </div>
+    <div class="product-body">
+      <h3 class="product-title">Blueberry Muffins</h3>
+      <p class="product-desc">Bursting blueberries with a soft crumb top.</p>
+      <div class="product-meta">
+        <span class="tag">Muffins</span>
+      </div>
+      <a class="product-link" href="{% url 'products:detail' 8 %}">View Details</a>
+    </div>
+  </article>
+
+</section>
+
+{% endblock %}
