@@ -1,21 +1,173 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Review Test</title>
-    <link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">    
-</head>
-<body>
-    <h1>Reviews Page</h1>
-    <p>If this page is styled, reviews are working.</p>
 
-    <section class="form">
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+{% block title %}Reviews{% endblock %}
 
-</body>
-</html>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header class="page-header">
+  <h1 class="page-title">Customer Reviews</h1>
+  <p class="page-subtitle">See what people are saying about our bakery favorites 🍰</p>
+</header>
+
+<section class="reviews-layout">
+
+  <!-- LEFT: Reviews list -->
+  <div class="reviews-list">
+
+    <!-- Review Card 1 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Classic Apple Pie</h3>
+          <p class="review-name">by Sarah M.</p>
+        </div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+      </div>
+      <p class="review-text">
+        The crust was flaky and buttery and the apple filling tasted homemade. Easily the best apple pie I’ve had in a while.
+      </p>
+    </article>
+
+    <!-- Review Card 2 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Chocolate Fudge Brownie</h3>
+          <p class="review-name">by Jason K.</p>
+        </div>
+        <div class="stars" aria-label="4 star rating">★★★★☆</div>
+      </div>
+      <p class="review-text">
+        Super rich and soft inside. I wish it was slightly bigger, but the flavor is amazing.
+      </p>
+    </article>
+
+    <!-- Review Card 3 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Strawberry Shortcake</h3>
+          <p class="review-name">by Amina R.</p>
+        </div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+      </div>
+      <p class="review-text">
+        Light, fluffy, and not too sweet. The strawberries tasted fresh and the whipped cream was perfect.
+      </p>
+    </article>
+
+    <!-- Review Card 4 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Pumpkin Pie</h3>
+          <p class="review-name">by Daniel T.</p>
+        </div>
+        <div class="stars" aria-label="3 star rating">★★★☆☆</div>
+      </div>
+      <p class="review-text">
+        Good spice flavor, but I personally wanted it a bit sweeter. Still solid with coffee.
+      </p>
+    </article>
+
+    <!-- Review Card 5 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Blueberry Muffin</h3>
+          <p class="review-name">by Olivia P.</p>
+        </div>
+        <div class="stars" aria-label="4 star rating">★★★★☆</div>
+      </div>
+      <p class="review-text">
+        Soft muffin with lots of blueberries. The top was nicely golden — would buy again.
+      </p>
+    </article>
+
+    <!-- Review Card 6 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Cinnamon Roll</h3>
+          <p class="review-name">by Mark L.</p>
+        </div>
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+      </div>
+      <p class="review-text">
+        Warm, gooey, and the icing was perfect. This is the kind of cinnamon roll you dream about.
+      </p>
+    </article>
+
+    <!-- Review Card 7 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Lemon Tart</h3>
+          <p class="review-name">by Priya S.</p>
+        </div>
+        <div class="stars" aria-label="4 star rating">★★★★☆</div>
+      </div>
+      <p class="review-text">
+        Tangy and fresh with a great crust. A tiny bit more filling would make it a 5 for me.
+      </p>
+    </article>
+
+    <!-- Review Card 8 -->
+    <article class="review-card">
+      <div class="review-top">
+        <div>
+          <h3 class="review-product">Pecan Pie</h3>
+          <p class="review-name">by Kevin B.</p>
+        </div>
+        <div class="stars" aria-label="3 star rating">★★★☆☆</div>
+      </div>
+      <p class="review-text">
+        Great nutty flavor, but it was a little too sticky-sweet for my taste. Still enjoyable.
+      </p>
+    </article>
+
+  </div>
+
+  <!-- RIGHT: Add a review -->
+  <aside class="review-form">
+    <h2 class="form-title">Leave a Review</h2>
+    <p class="form-subtitle">Tell us what you tried and how it was!</p>
+
+    <!-- For now this is a front-end form only -->
+    <form method="post" action="#">
+      {% csrf_token %}
+
+      <label class="label" for="name">Your Name</label>
+      <input class="input" id="name" name="name" type="text" placeholder="e.g., Mark" required>
+
+      <label class="label" for="product">Product</label>
+      <input class="input" id="product" name="product" type="text" placeholder="e.g., Apple Pie" required>
+
+      <label class="label" for="rating">Rating</label>
+      <select class="input" id="rating" name="rating" required>
+        <option value="" selected disabled>Select rating</option>
+        <option>5</option>
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+      </select>
+
+      <label class="label" for="review">Your Review</label>
+      <textarea class="input textarea" id="review" name="review" rows="5" placeholder="Write your review..." required></textarea>
+
+      <button class="btn" type="submit">Submit Review</button>
+
+      <p class="note">
+      </p>
+    </form>
+  </aside>
+
+</section>
+
+{% endblock %}

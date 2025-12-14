@@ -1,8 +1,150 @@
-body {
-    background-color: #e6ffe6;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    color: #c7ff2e;
-}
+/* Page header */
+.page-header{
+    text-align:center;
+    padding: 18px 10px 8px;
+  }
+  
+  .page-title{
+    margin: 0;
+    font-size: 2.2rem;
+    color: #5b3a1d;
+  }
+  
+  .page-subtitle{
+    margin: 8px 0 0;
+    color: #6b4a2a;
+    font-size: 1rem;
+  }
+  
+  /* Layout */
+  .reviews-layout{
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 22px;
+    padding: 18px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Review list */
+  .reviews-list{
+    display: grid;
+    gap: 16px;
+  }
+  
+  .review-card{
+    background: #f6e7c3;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  }
+  
+  .review-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .review-product{
+    margin: 0;
+    font-size: 1.15rem;
+    color: #a04b2c;
+  }
+  
+  .review-name{
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+    color: #6b4a2a;
+  }
+  
+  .stars{
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    color: #5b3a1d;
+    white-space: nowrap;
+  }
+  
+  .review-text{
+    margin: 10px 0 0;
+    color: #5b3a1d;
+    line-height: 1.35rem;
+  }
+  
+  /* Form */
+  .review-form{
+    background: #f6e7c3;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 16px;
+  }
+  
+  .form-title{
+    margin: 0;
+    color: #a04b2c;
+    font-size: 1.35rem;
+  }
+  
+  .form-subtitle{
+    margin: 6px 0 16px;
+    color: #6b4a2a;
+  }
+  
+  .label{
+    display:block;
+    font-weight: 600;
+    margin: 10px 0 6px;
+    color: #5b3a1d;
+  }
+  
+  .input{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(91,58,29,0.25);
+    outline: none;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  
+  .textarea{
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .btn{
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 14px;
+    background: #5b3a1d;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    opacity: 0.95;
+  }
+  
+  .note{
+    margin: 10px 0 0;
+    font-size: 0.85rem;
+    color: #6b4a2a;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px){
+    .reviews-layout{
+      grid-template-columns: 1fr;
+      padding: 18px 18px 30px;
+    }
+    .review-form{
+      position: static;
+    }
+  }  
