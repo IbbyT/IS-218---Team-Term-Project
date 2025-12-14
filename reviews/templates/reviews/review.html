@@ -8,5 +8,14 @@
 <body>
     <h1>Reviews Page</h1>
     <p>If this page is styled, reviews are working.</p>
+
+    <section class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
 </body>
 </html>
