@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Bakery Review Site Home")
+    return render(request, "products/home.html")    
 
 def product_list(request):
     return HttpResponse("Product list page (pies, cakes, sweets...)")
