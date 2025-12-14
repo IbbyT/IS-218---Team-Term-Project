@@ -1,43 +1,40 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pie Home</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'products/site.css' %}">
-<body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <h1 class="logo">Pie Home </h1>
-    </header>
+{% block title %}Pie Home{% endblock %}
 
-    <!-- SEARCH -->
-    <section class="search-section">
-        <input type="text" placeholder="Search Everything">
-    </section>
+{% block content %}
 
-    <!-- FILTER BUTTONS -->
-    <section class="filters">
-        <button>Apple</button>
-        <button>Pumpkin</button>
-        <button>Cherry</button>
-        <button>Pecan</button>
-    </section>
+<!-- HEADER -->
+<header class="site-header">
+    <h1 class="logo">Pie Home</h1>
+</header>
 
-    <!-- PRODUCT GRID -->
-    <section class="grid">
-        {% for i in "123456" %}
-        <div class="card">
-            <img src="{% static 'products/sample_pie.jpg' %}" alt="Pie">
-            <h3>Easy Apple Pie</h3>
-            <p>
-                This recipe is hands down my favorite apple pie made from scratch!
-                Juicy apple slices are coated in sugar...
-            </p>
-        </div>
-        {% endfor %}
-    </section>
+<!-- SEARCH -->
+<section class="search-section">
+    <input type="text" placeholder="Search Everything">
+</section>
 
-</body>
-</html>
+<!-- FILTER BUTTONS -->
+<section class="filters">
+    <button>Apple</button>
+    <button>Pumpkin</button>
+    <button>Cherry</button>
+    <button>Pecan</button>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="grid">
+    {% for i in "123456" %}
+    <div class="card">
+        <img src="{% static 'products/sample_pie.jpg' %}" alt="Pie">
+        <h3>Easy Apple Pie</h3>
+        <p>
+            This recipe is hands down my favorite apple pie made from scratch!
+            Juicy apple slices are coated in sugar...
+        </p>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

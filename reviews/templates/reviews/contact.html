@@ -1,12 +1,112 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact</title>
-    <link rel="stylesheet" href="{% static 'reviews/contact.css' %}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Pie Home</title>
+  <link rel="stylesheet" href="{% static 'reviews/contact.css' %}">
 </head>
+
 <body>
-    <h1>📬 Contact Us</h1>
-    <p>This is a test contact page.</p>
+  <main class="page">
+    <section class="card">
+      <div class="inner-border"></div>
+
+      <header class="header">
+        <div class="title-row">
+          <span class="pie-emoji" aria-hidden="true">🥧</span>
+          <h1 class="title">Pie Home</h1>
+          <span class="pie-emoji" aria-hidden="true">🥧</span>
+        </div>
+        <p class="subtitle">Search for Pie Recipes, Pie Stories</p>
+      </header>
+
+      <div class="content">
+        <!-- LEFT SIDE -->
+        <section class="left">
+          <h2>Meet The Team:</h2>
+
+          <p class="blurb">
+            Welcome! Pie Home is currently operated by a small team of developers who came together to
+            create a community-powered space where everyone can share feedback, discover popular items,
+            and help improve our recipes over time.
+          </p>
+
+          <div class="roles">
+            <div class="role-block">
+              <div class="role-title">Back-end Developers:</div>
+              <ul>
+                <li>Ethan V</li>
+                <li>Ibraheem Tahir</li>
+                <li>Koleen T</li>
+              </ul>
+            </div>
+
+            <div class="role-block">
+              <div class="role-title">Front-End Developers:</div>
+              <ul>
+                <li>Justin</li>
+                <li>KnivesOuch</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="find-us">Where else can you find us?</h3>
+
+          <div class="contact-info">
+            <div class="info-row">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <span>piehome@bakery.com</span>
+            </div>
+            <div class="info-row">
+              <span class="icon" aria-hidden="true">📞</span>
+              <span>201-555-0120</span>
+            </div>
+
+            <div class="social-row" aria-label="social links">
+              <span class="social" title="Facebook" aria-hidden="true">f</span>
+              <span class="social" title="Instagram" aria-hidden="true">📷</span>
+              <span class="social" title="Twitter/X" aria-hidden="true">𝕏</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- RIGHT SIDE -->
+        <section class="right">
+          <form class="contact-form" method="post" action="#">
+            <!-- If you later wire this to a Django form/view, keep this -->
+            {% csrf_token %}
+
+            <div class="row">
+              <div class="field">
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name" type="text" placeholder="First Name" />
+              </div>
+
+              <div class="field">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" name="last_name" type="text" placeholder="Last Name" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="Email Address" />
+            </div>
+
+            <div class="field">
+              <label for="message">Your Message To Us</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn">SEND</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Pie Home{% endblock %}</title>
+
+  <!-- Global site styles -->
+  <link rel="stylesheet" href="{% static 'products/site.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+        <a href="{% url 'products:home' %}" class="nav-logo">Pie Home</a>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'products:home' %}">Home</a></li>
+            <li><a href="{% url 'review' %}">Reviews</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
