@@ -10,7 +10,7 @@ class Feedback(models.Model):
 		related_name='feedbacks'
 	)
 	rating = models.PositiveSmallIntegerField(
-		validators=[MinValueValidator(1), MaxValueValidator(10)]
+		validators=[MinValueValidator(1), MaxValueValidator(5)]
 	)
 	comment = models.TextField()
 
