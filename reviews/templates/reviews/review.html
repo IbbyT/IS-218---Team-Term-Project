@@ -21,7 +21,7 @@
     <h2 class="form-title">Leave a Review</h2>
     <p class="form-subtitle">Tell us what you tried and how it was!</p>
   
-    <!-- For now this is a front-end form only -->
+    <!-- Fully Fledged User Review -->
     <form method="post">
       {% csrf_token %}
 
@@ -40,22 +40,26 @@
       <button class="btn" type="submit">Submit Review</button>
     </form>
 
-
-  </aside>
-
-  <!-- LEFT: Reviews list -->
-  <div class="reviews-list">
-
     <!-- User Reviews -->
     
     {% for review in reviews %}
     <div class="user_review">
       <h3>{{ review.product.name }}</h3>
       <p>by {{ review.username }}</p>
-      <p>Rating: {{ review.rating }} stars</p>
-      <p>{{ review.comment }}</p>
-    </div>
-    {% endfor %}
+    
+      <div class="stars" aria-label="{{ review.rating }} star rating">
+        {% for i in "12345" %}
+        {% if forloop.counter <= review.rating %} ★ {% else %} ☆ {% endif %} {% endfor %} </div>
+    
+          <p>{{ review.comment }}</p>
+      </div>
+      {% endfor %}
+
+
+  </aside>
+
+  <!-- LEFT: Reviews list -->
+  <div class="reviews-list">
 
     <!-- Review Card 1 -->
     <article class="review-card">
