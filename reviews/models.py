@@ -3,6 +3,7 @@ from products.models import Product
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Feedback(models.Model):
+	username = models.CharField(max_length=150, default='Anonymous')
 	product = models.ForeignKey(
 		Product,
 		on_delete=models.CASCADE,

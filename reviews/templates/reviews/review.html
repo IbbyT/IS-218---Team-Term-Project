@@ -16,8 +16,46 @@
 
 <section class="reviews-layout">
 
+  <!-- RIGHT: Add a review -->
+  <aside class="review-form">
+    <h2 class="form-title">Leave a Review</h2>
+    <p class="form-subtitle">Tell us what you tried and how it was!</p>
+  
+    <!-- For now this is a front-end form only -->
+    <form method="post">
+      {% csrf_token %}
+
+      <label class="label" for="{{ form.username.id_for_label }}">Your Name</label>
+      {{ form.username }}
+
+      <label class="label" for="{{ form.product.id_for_label }}">Product</label>
+      {{ form.product }}
+
+      <label class="label" for="{{ form.rating.id_for_label }}">Rating</label>
+      {{ form.rating }}
+
+      <label class="label" for="{{ form.comment.id_for_label }}">Your Review</label>
+      {{ form.comment }}
+
+      <button class="btn" type="submit">Submit Review</button>
+    </form>
+
+
+  </aside>
+
   <!-- LEFT: Reviews list -->
   <div class="reviews-list">
+
+    <!-- User Reviews -->
+    
+    {% for review in reviews %}
+    <div class="user_review">
+      <h3>{{ review.product.name }}</h3>
+      <p>by {{ review.username }}</p>
+      <p>Rating: {{ review.rating }} stars</p>
+      <p>{{ review.comment }}</p>
+    </div>
+    {% endfor %}
 
     <!-- Review Card 1 -->
     <article class="review-card">
@@ -132,41 +170,6 @@
     </article>
 
   </div>
-
-  <!-- RIGHT: Add a review -->
-  <aside class="review-form">
-    <h2 class="form-title">Leave a Review</h2>
-    <p class="form-subtitle">Tell us what you tried and how it was!</p>
-
-    <!-- For now this is a front-end form only -->
-    <form method="post" action="#">
-      {% csrf_token %}
-
-      <label class="label" for="name">Your Name</label>
-      <input class="input" id="name" name="name" type="text" placeholder="e.g., Mark" required>
-
-      <label class="label" for="product">Product</label>
-      <input class="input" id="product" name="product" type="text" placeholder="e.g., Apple Pie" required>
-
-      <label class="label" for="rating">Rating</label>
-      <select class="input" id="rating" name="rating" required>
-        <option value="" selected disabled>Select rating</option>
-        <option>5</option>
-        <option>4</option>
-        <option>3</option>
-        <option>2</option>
-        <option>1</option>
-      </select>
-
-      <label class="label" for="review">Your Review</label>
-      <textarea class="input textarea" id="review" name="review" rows="5" placeholder="Write your review..." required></textarea>
-
-      <button class="btn" type="submit">Submit Review</button>
-
-      <p class="note">
-      </p>
-    </form>
-  </aside>
 
 </section>
 
