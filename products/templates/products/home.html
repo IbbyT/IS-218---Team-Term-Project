@@ -7,34 +7,64 @@
 
 <!-- HEADER -->
 <header class="site-header">
-    <h1 class="logo">Pie Home</h1>
+    <h1 class="logo">Welcome to Pie Home 🥧</h1>
+    <p class="tagline">
+        Discover handcrafted pies, cakes, and treats — and see what others love most.
+    </p>
 </header>
 
 <!-- SEARCH -->
 <section class="search-section">
-    <input type="text" placeholder="Search Everything">
+    <input type="text" placeholder="Search baked goods...">
 </section>
 
 <!-- FILTER BUTTONS -->
 <section class="filters">
-    <button>Apple</button>
-    <button>Pumpkin</button>
-    <button>Cherry</button>
-    <button>Pecan</button>
+    <button>Pies</button>
+    <button>Cakes</button>
+    <button>Muffins</button>
+    <button>Cookies</button>
 </section>
 
 <!-- PRODUCT GRID -->
 <section class="grid">
-    {% for i in "123456" %}
+
     <div class="card">
-        <img src="{% static 'products/sample_pie.jpg' %}" alt="Pie">
-        <h3>Easy Apple Pie</h3>
-        <p>
-            This recipe is hands down my favorite apple pie made from scratch!
-            Juicy apple slices are coated in sugar...
-        </p>
+        <img src="{% static 'products/Apple_pie.jpg' %}" alt="Apple Pie">
+        <h3>Classic Apple Pie</h3>
+        <p>A timeless favorite with cinnamon apples and a flaky golden crust.</p>
     </div>
-    {% endfor %}
+
+    <div class="card">
+        <img src="{% static 'products/Cherry_lattice_pie.jpg' %}" alt="Cherry Pie">
+        <h3>Cherry Lattice Pie</h3>
+        <p>Sweet cherries baked beneath a beautiful lattice crust.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'products/Pecan_crunch_pie.jpg' %}" alt="Pecan Pie">
+        <h3>Pecan Crunch Pie</h3>
+        <p>Rich, nutty, and perfectly sweet with a caramelized crunch.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'products/Pumpkin_pie.jpg' %}" alt="Pumpkin Pie">
+        <h3>Spiced Pumpkin Pie</h3>
+        <p>Classic pumpkin filling with warm fall spices.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'products/blueberry_muffins.jpg' %}" alt="Blueberry Muffins">
+        <h3>Blueberry Muffins</h3>
+        <p>Soft, fluffy muffins bursting with fresh blueberries.</p>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'products/chocolate_cake.jpg' %}" alt="Chocolate Cake">
+        <h3>Chocolate Cake</h3>
+        <p>Rich, moist chocolate cake made for true chocolate lovers.</p>
+    </div>
+
 </section>
 
 {% endblock %}
