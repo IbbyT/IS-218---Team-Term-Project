@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+<header class="page-header">
+  <h1 class="page-title">{{ product.name }}</h1>
+</header>
+
+<section class="product-detail-layout">
+
+  <!-- LEFT: Product -->
+  <article class="product-card product-detail-card">
+
+    <div class="product-image">
+      {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+      {% else %}
+        <div class="image-placeholder">No Image</div>
+      {% endif %}
+    </div>
+
+    <div class="product-body">
+      <h3 class="product-title">{{ product.name }}</h3>
+      <p class="product-desc">{{ product.description }}</p>
+
+      <div class="product-meta">
+        {% for tag in product.tags.all %}
+          <span class="tag">{{ tag.name }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RIGHT: Price + Reviews -->
+  <aside class="product-info">
+
+    <div class="product-price">
+      <h2>${{ product.price }}</h2>
+    </div>
+
+    <section class="product-reviews">
+      <h3>Customer Reviews</h3>
+
+      {% for review in product.feedbacks.all %}
+        <article class="review-card">
+          <p class="review-name">by {{ review.username }}</p>
+
+          <div class="stars" aria-label="{{ review.rating }} star rating">
+            {% for i in "12345" %}
+              {% if forloop.counter <= review.rating %}
+                ★
+              {% else %}
+                ☆
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <p class="review-text">{{ review.comment }}</p>
+        </article>
+      {% empty %}
+        <p>No reviews yet.</p>
+      {% endfor %}
+    </section>
+
+  </aside>
+
+</section>
+
+{% endblock %}

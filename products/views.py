@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 # HOME PAGE
@@ -15,6 +14,9 @@ def product_list(request):
 	})
 
 
-# PRODUCT DETAIL PAGE (placeholder for now)
-def product_detail(request, pk):
-	return HttpResponse(f"Product detail page for product #{pk}")
+# PRODUCT DETAIL PAGE
+def product_detail(request, id):
+	product = get_object_or_404(Product, id=id)
+	return render(request, "products/product_detail.html", {
+		"product": product
+	})
